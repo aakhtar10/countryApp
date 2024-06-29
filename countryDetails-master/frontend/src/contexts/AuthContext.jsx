@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
       const fetchUser = async () => {
         try {
           const response = await axios.get(
-            "http://localhost:5000/api/auth/me",
+            "https://countryapp-0tlc.onrender.com/api/auth/me",
             {
               headers: { "x-auth-token": token },
             }
@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (username, password) => {
-    const response = await axios.post("http://localhost:5000/api/auth/login", {
+    const response = await axios.post("https://countryapp-0tlc.onrender.com/api/auth/login", {
       username,
       password,
     });
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (username, password) => {
-    await axios.post("http://localhost:5000/api/auth/register", {
+    await axios.post("https://countryapp-0tlc.onrender.com/api/auth/register", {
       username,
       password,
     });

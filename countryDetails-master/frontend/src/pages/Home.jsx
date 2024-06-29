@@ -14,7 +14,7 @@ const Home = () => {
     const fetchHistory = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:5000/api/history", {
+        const response = await axios.get("https://countryapp-0tlc.onrender.com/api/history", {
           headers: { "x-auth-token": token },
         });
         setHistory(response.data);
@@ -32,7 +32,7 @@ const Home = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        `http://localhost:5000/api/countries/${currencyCode}`,
+        `https://countryapp-0tlc.onrender.com/api/countries/${currencyCode}`,
         {
           headers: { "x-auth-token": token },
         }
@@ -40,7 +40,7 @@ const Home = () => {
       setCountries(response.data);
 
       await axios.post(
-        "http://localhost:5000/api/history",
+        "https://countryapp-0tlc.onrender.com/api/history",
         { search: currencyCode },
         { headers: { "x-auth-token": token } }
       );
@@ -59,7 +59,7 @@ const Home = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:5000/api/favorites",
+        "https://countryapp-0tlc.onrender.com/api/favorites",
         country,
         {
           headers: { "x-auth-token": token },
