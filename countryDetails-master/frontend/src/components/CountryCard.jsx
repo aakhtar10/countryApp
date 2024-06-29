@@ -10,6 +10,7 @@ const CountryCard = ({ country, onFavorite, isFavorite }) => {
       <button onClick={() => onFavorite(country)}>
         {isFavorite ? "Unfavorite" : "Favorite"}
       </button>
+      
     </div>
   );
 };
